@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.summitworks.project.timecard.exception.UserNotFoundException;
 import com.summitworks.project.timecard.model.User;
 import com.summitworks.project.timecard.repo.UserRepository;
 
+@Service
 public class UserService implements UserServiceInterface{
 	
 	@Autowired

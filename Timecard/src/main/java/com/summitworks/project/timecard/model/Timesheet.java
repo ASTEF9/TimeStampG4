@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class Timecard {
+public class Timesheet {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long id;
@@ -26,11 +26,11 @@ public class Timecard {
 	private String hrsCode;
 	@Column
 	private String hrsWorked;
-	public Timecard() {
+	public Timesheet() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Timecard(Long id, Date date, String sector, Location location, Time timeIn, Time timeOut, String hrsCode,
+	public Timesheet(Long id, Date date, String sector, Location location, Time timeIn, Time timeOut, String hrsCode,
 			String hrsWorked) {
 		super();
 		this.id = id;

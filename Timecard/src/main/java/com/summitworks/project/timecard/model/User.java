@@ -5,21 +5,23 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="user")
 public class User {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
     private Long id;
-	@Column
+	@Column(name="firstName")
 	private String firstName;
-	@Column
+	@Column(name="lastName")
 	private String lastName;
-	@Column
+	@Column(name="email")
 	private String email;
-	@Column
+	@Column(name="description")
 	private String description;
-	@Column
+	@Column(name="password")
 	private String password;
 	public User() {
 		super();
