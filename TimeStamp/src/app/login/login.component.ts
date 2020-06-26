@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
 				{
 					this.router.navigate(['/']);
 					this.loginService.loggedIn = true;
+					this.loginService.loggedInUser = user.firstName + user.lastName;
+					console.log(this.loginService.loggedInUser);
 					return;
 				}
 				else
