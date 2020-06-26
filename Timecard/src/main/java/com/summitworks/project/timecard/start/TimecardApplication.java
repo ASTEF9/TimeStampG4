@@ -1,4 +1,4 @@
-package com.project.Timecard;
+package com.summitworks.project.timecard.start;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

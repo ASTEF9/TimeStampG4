@@ -8,11 +8,11 @@
 		<version>2.3.1.RELEASE</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.project</groupId>
-	<artifactId>Timecard</artifactId>
+	<groupId>com.summitworks.project</groupId>
+	<artifactId>timecard</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Timecard</name>
-	<description>Timecard project</description>
+	<name>timecard</name>
+	<description>timecard project</description>
 
 	<properties>
 		<java.version>1.8</java.version>
