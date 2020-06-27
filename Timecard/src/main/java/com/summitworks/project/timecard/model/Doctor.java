@@ -1,10 +1,14 @@
 package com.summitworks.project.timecard.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="doctor")
 public class Doctor {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
@@ -19,6 +23,7 @@ public class Doctor {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Doctor(Long id, String firstName, String lastName, String fileNumber) {
 		super();
 		this.id = id;
