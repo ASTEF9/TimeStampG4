@@ -13,9 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.summitworks.project.timecard.exception.LocationNotFoundException;
 import com.summitworks.project.timecard.exception.UserNotFoundException;
+import com.summitworks.project.timecard.model.Location;
 import com.summitworks.project.timecard.model.User;
-import com.summitworks.project.timecard.service.UserService;
+import com.summitworks.project.timecard.service.LocationService;
 
 @RestController
 //@CrossOrigin(
@@ -25,29 +27,29 @@ import com.summitworks.project.timecard.service.UserService;
 //		methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE, RequestMethod.PUT}
 //		
 //		)
-public class UserController {
+public class LocationController {
 	
 	@Autowired
-	private UserService userService;
+	private LocationService locationService;
 	
-	@GetMapping("/users")
-	List<User> all(){
-		return userService.getAllUsers();
+	@GetMapping("/locations")
+	List<Location> all(){
+		return locationService.getAllLocations();
 	}
-	@PostMapping("/users")
-	User newUser(@RequestBody User user) {
-		return userService.addNewUser(user);
+	@PostMapping("/locations")
+	Location newLocation(@RequestBody Location location) {
+		return locationService.addNewLocation(location);
 	}
-	@GetMapping("/users/{id}")
-	User getUser(@PathVariable Long id) throws UserNotFoundException{
-		return userService.getUser(id);
+	@GetMapping("/locations/{id}")
+	Location getLocation(@PathVariable Long id) throws LocationNotFoundException{
+		return locationService.getLocation(id);
 	}
-	@PutMapping("/users/{id}")
-	User updateUser(@RequestBody User user,@PathVariable Long id) throws UserNotFoundException{
-		return userService.updateUser(user, id);
+	@PutMapping("/locations/{id}")
+	Location updateUser(@RequestBody Location location,@PathVariable Long id) throws LocationNotFoundException{
+		return locationService.updateLocation(location, id);
 	}
-	@DeleteMapping("/users/{id}")
-	void deleteUser(@PathVariable Long id) throws UserNotFoundException{
-		userService.deleteUser(id);
+	@DeleteMapping("/locations/{id}")
+	void deleteUser(@PathVariable Long id) throws LocationNotFoundException{
+		locationService.deleteLocation(id);
 	}
 }
