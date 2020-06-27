@@ -23,6 +23,8 @@ import { CalendarModule, DateAdapter } from "angular-calendar";
 import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { TimecardComponent } from "./timecard/timecard.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
+import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
     RegisterComponent,
     TimeNavComponent,
     TimecardComponent,
+    CreateDoctorComponent,
+    ListDoctorsComponent,
   ],
   imports: [
     BrowserModule,

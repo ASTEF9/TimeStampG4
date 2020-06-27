@@ -4,13 +4,17 @@ import { LoginComponent } from "./login/login.component";
 import { HomeComponent } from "./home/home.component";
 import { RegisterComponent } from "./register/register.component";
 import { TimecardComponent } from "./timecard/timecard.component";
+import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
+import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "registration", component: RegisterComponent },
   { path: "home", component: HomeComponent },
   { path: "", component: HomeComponent },
+  { path: "listDoctors", component: ListDoctorsComponent },
   { path: "timecard", component: TimecardComponent },
+  { path: "createDoc", component: CreateDoctorComponent },
 ];
 
 @NgModule({
