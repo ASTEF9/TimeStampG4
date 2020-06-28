@@ -3,7 +3,11 @@ package com.summitworks.project.timecard.service;
 import java.util.List;
 import java.util.Optional;
 
+import javax.transaction.Transactional;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.integration.IntegrationProperties.RSocket.Client;
+import org.springframework.stereotype.Service;
 
 import com.summitworks.project.timecard.exception.DoctorNotFoundException;
 import com.summitworks.project.timecard.exception.LocationNotFoundException;
@@ -12,6 +16,7 @@ import com.summitworks.project.timecard.model.Location;
 
 import com.summitworks.project.timecard.repo.LocationRepository;
 
+@Service
 public class LocationService implements LocationServiceInterface{
 	
 	@Autowired
@@ -62,5 +67,11 @@ public class LocationService implements LocationServiceInterface{
         }
 		
 	}
+
+//	@Transactional
+//	public void addClient(Client client) {
+//		locationRepo
+//		
+//	}
 
 }
