@@ -19,7 +19,7 @@ public class Timesheet {
     @Column
     private Long id;
 	@Column
-	private Date date;
+	private String date;
 	@Column
 	private String sector;
 	
@@ -27,9 +27,9 @@ public class Timesheet {
 	@JoinColumn(name="id", referencedColumnName="id" )
 	private Location location;
 	@Column
-	private Time timeIn;
+	private String timeIn;
 	@Column
-	private Time timeOut;
+	private String timeOut;
 	@Column
 	private String hrsCode;
 	@Column
@@ -38,7 +38,7 @@ public class Timesheet {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Timesheet(Long id, Date date, String sector, Location location, Time timeIn, Time timeOut, String hrsCode,
+	public Timesheet(Long id, String date, String sector, Location location, String timeIn, String timeOut, String hrsCode,
 			String hrsWorked) {
 		super();
 		this.id = id;
@@ -56,10 +56,10 @@ public class Timesheet {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Date getDate() {
+	public String getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(String date) {
 		this.date = date;
 	}
 	public String getSector() {
@@ -74,16 +74,16 @@ public class Timesheet {
 	public void setLocation(Location location) {
 		this.location = location;
 	}
-	public Time getTimeIn() {
+	public String getTimeIn() {
 		return timeIn;
 	}
-	public void setTimeIn(Time timeIn) {
+	public void setTimeIn(String timeIn) {
 		this.timeIn = timeIn;
 	}
-	public Time getTimeOut() {
+	public String getTimeOut() {
 		return timeOut;
 	}
-	public void setTimeOut(Time timeOut) {
+	public void setTimeOut(String timeOut) {
 		this.timeOut = timeOut;
 	}
 	public String getHrsCode() {
