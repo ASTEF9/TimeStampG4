@@ -20,13 +20,13 @@ import com.summitworks.project.timecard.model.User;
 import com.summitworks.project.timecard.service.LocationService;
 
 @RestController
-//@CrossOrigin(
-//		allowCredentials = "true",
-//		origins = "*",
-//		allowedHeaders = "*",
-//		methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE, RequestMethod.PUT}
-//		
-//		)
+@CrossOrigin(
+		allowCredentials = "true",
+		origins = "*",
+		allowedHeaders = "*",
+		methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE, RequestMethod.PUT}
+		
+		)
 public class LocationController {
 	
 	@Autowired

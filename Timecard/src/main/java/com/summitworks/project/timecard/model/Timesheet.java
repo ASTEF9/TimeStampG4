@@ -4,10 +4,16 @@ import java.sql.Date;
 import java.sql.Time;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name="timehseet")
 public class Timesheet {
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
     @Column
@@ -16,7 +22,9 @@ public class Timesheet {
 	private Date date;
 	@Column
 	private String sector;
-	@Column
+	
+	@OneToOne
+	@JoinColumn(name="id", referencedColumnName="id" )
 	private Location location;
 	@Column
 	private Time timeIn;

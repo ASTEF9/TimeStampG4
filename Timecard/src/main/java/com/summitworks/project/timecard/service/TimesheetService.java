@@ -4,11 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.summitworks.project.timecard.exception.TimesheetNotFoundException;
 import com.summitworks.project.timecard.model.Timesheet;
 import com.summitworks.project.timecard.repo.TimesheetRepository;
 
+@Service
 public class TimesheetService implements TimesheetServiceInterface{
 	
 	@Autowired
