@@ -7,18 +7,15 @@ import { LoginService } from './login.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-
 export class AppComponent 
 {
 	title = 'TimeStamp';
-	today = new Date();
 	
 	constructor(public loginService: LoginService, private router: Router) { }
 	
 	logout(): void
 	{
 		this.loginService.loggedIn = false;
-		this.loginService.loggedInUser = "";
 		this.router.navigate(['/']);
 	}
 }

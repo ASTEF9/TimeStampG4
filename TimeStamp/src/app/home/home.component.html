@@ -1,7 +1,7 @@
 <div *ngIf="loginService.loggedIn; else elseBlock">
-	<h1> You are logged in</h1>
+  <app-time-nav></app-time-nav>
 </div>
 
 <ng-template #elseBlock>
-    <h1>You are logged out</h1>
+  <h1>You are logged out</h1>
 </ng-template>

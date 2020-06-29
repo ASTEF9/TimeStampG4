@@ -11,7 +11,7 @@ export class User
 	constructor(u: string, p: string, f: string, l: string, d: string)
 	{
 //		this.username = u;
-		this.email = u;
+		this.email = u;		
 		this.password = p;
 		this.firstName = f;
 		this.lastName = l;

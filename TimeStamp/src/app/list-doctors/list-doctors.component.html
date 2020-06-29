@@ -1,0 +1,50 @@
+<div class="col-md-6 user-container">
+    <h2 style="margin: auto">List Doctors</h2>
+
+    <!-- <h3>Child Component to Display Tour Names</h3>
+    <app-child-tour [tour_name]="Name"></app-child-tour> -->
+
+    <router-outlet></router-outlet>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <!-- <th class="hidden" title=" tourBullets"> tourBullets</th> -->
+                <th title="Doctor ID">Doctor ID</th>
+                <th title="Doctor FirstName">Doctor Name</th>
+                <th title="Doctor LastName">Doctor LastName</th>
+                <th title="File Number"> File Number</th>
+                <th title="Action"> Action</th>
+
+                <!-- <th title="TourPrice">Select Employee</th> -->
+
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let doctor of doctors; let i = index">
+
+                <!-- tourBullets: string;
+            tourRegion: string;
+            tourDifficulty: string;
+            tourLength: number;
+            tourPrice: number;
+            tourTags: string[];
+            tourName: string; -->
+                <!-- <th class="hidden"></th> -->
+                <td>{{i}}</td>
+                <th title="Tour Name">{{doctor?.firstName}}</th>
+
+                <td title="Tour Region">{{doctor?.lastName  }}</td>
+
+                <td (click)="onSelect(doctor.id)" title="Tour Price">{{doctor?.fileNumber}}</td>
+
+                <td class="text-center"><button class="btn btn-danger btn-xs" (click)="deleteTour(doctor.id)"><span
+                            class="glyphicon glyphicon-remove"></span> Delete</button>
+
+
+
+            </tr>
+        </tbody>
+    </table>
+</div>
