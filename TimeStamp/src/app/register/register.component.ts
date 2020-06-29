@@ -22,7 +22,7 @@ export class RegisterComponent implements OnInit {
 			firstName: new FormControl("", Validators.required),
 			lastName: new FormControl("", Validators.required),
 			description: new FormControl("", Validators.required),
-			username: new FormControl("", Validators.required),
+			email: new FormControl("", Validators.required),
 			password: new FormControl("", Validators.required),
 			rePassword: new FormControl("", Validators.required)
 		});		
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
 			this.router.navigate(['/registration']);;
 			return;
 		}
-		var u = new User(user.username, user.password, user.firstName, user.lastName, user.description);
+		var u = new User(user.email, user.password, user.firstName, user.lastName, user.description);
 		this.loginService.register(u).subscribe((data: {}) =>
 		{
 			this.router.navigate(['/']);

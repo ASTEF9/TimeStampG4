@@ -1,7 +1,8 @@
 export class User
 {
 	public id: number;
-	public username: string;
+//	public username: string;
+	public email: string;
 	public password: string;
 	public firstName: string;
 	public lastName: string;
@@ -9,7 +10,8 @@ export class User
 	
 	constructor(u: string, p: string, f: string, l: string, d: string)
 	{
-		this.username = u;
+//		this.username = u;
+		this.email = u;
 		this.password = p;
 		this.firstName = f;
 		this.lastName = l;

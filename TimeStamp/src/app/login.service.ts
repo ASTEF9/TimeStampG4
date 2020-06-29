@@ -36,20 +36,23 @@ export class LoginService {
   
 	getValidUsers(): Observable<User[]>
 	{
-		return this.http.get<User[]>("http://localhost:3000/user")
+//		return this.http.get<User[]>("http://localhost:3000/user")
+		return this.http.get<User[]>("http://localhost:8080/users")
 		.pipe(catchError(this.errorHandler));
 	}
 	
 	register(user: User): Observable<User[]>
 	{
 		user.id = ++this.id;
-		return this.http.post<User[]>("http://localhost:3000/user", user)
+//		return this.http.post<User[]>("http://localhost:3000/user", user)
+		return this.http.post<User[]>("http://localhost:8080/users", user)
 		.pipe(catchError(this.errorHandlerRegistration));	
 	}
 	
 	deleteUser(id: number): Observable<User[]>
 	{
-		return this.http.delete<User []>("http://localhost:3000/user/" + id)
+//		return this.http.delete<User []>("http://localhost:3000/user/" + id)
+		return this.http.delete<User[]>("http://localhost:8080/users/" + id)
 		.pipe(catchError(this.errorHandler));
 	}
 /*	
