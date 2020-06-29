@@ -1,8 +1,14 @@
 <nav>
+	<h1>TimeCard</h1>
+	<h3>Welcome {{loginService.loggedInUser}}</h3>
+	<h5>{{today | date}}</h5>
 	<button routerLink="/home" routerLinkActive="active">Home</button>
 	<button routerLink="/login" routerLinkActive="active">Login</button>
 	<button routerLink="/registration" routerLinkActive="active">Register</button>
 	<button (click)="logout()">Logout</button>
+	<h1>//TEMP: MERGE WITH SIDEBAR</h1>
+	<button routerLink="/users" routerLinkActive="active">Users</button>
+	<button routerLink="/master" routerLinkActive="active">Master Data</button>
 </nav>
 
 <router-outlet></router-outlet>
