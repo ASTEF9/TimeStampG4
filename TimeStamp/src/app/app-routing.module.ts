@@ -22,7 +22,6 @@ const routes: Routes = [
   { path: "createLocation", component: CreateLocationComponent },
   { path: "listLocations", component: ListLocationsComponent },
   { path: "createTimesheet", component: CreateTimehseetComponent },
-  { path: "listTimesheets", component: ListTimesheetComponent },
 ];
 
 @NgModule({

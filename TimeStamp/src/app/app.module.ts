@@ -26,10 +26,6 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
 import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
 import { CreateLocationComponent } from "./create-location/create-location.component";
-import { ListLocationsComponent } from "./list-locations/list-locations.component";
-import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
-import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.component';
-import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +38,6 @@ import { ListTimesheetComponent } from './list-timesheet/list-timesheet.componen
     CreateDoctorComponent,
     ListDoctorsComponent,
     CreateLocationComponent,
-    ListLocationsComponent,
-    CreateTimehseetComponent,
-    ListTimesheetComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,7 +52,6 @@ import { ListTimesheetComponent } from './list-timesheet/list-timesheet.componen
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    BsDatepickerModule.forRoot(),
     MatListModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
