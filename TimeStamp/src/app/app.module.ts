@@ -29,6 +29,7 @@ import { CreateLocationComponent } from "./create-location/create-location.compo
 import { ListLocationsComponent } from "./list-locations/list-locations.component";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.component';
+import { ListTimesheetComponent } from './list-timesheet/list-timesheet.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.co
     CreateLocationComponent,
     ListLocationsComponent,
     CreateTimehseetComponent,
+    ListTimesheetComponent,
   ],
   imports: [
     BrowserModule,

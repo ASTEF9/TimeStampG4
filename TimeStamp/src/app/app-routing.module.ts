@@ -9,6 +9,7 @@ import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
 import { CreateLocationComponent } from "./create-location/create-location.component";
 import { ListLocationsComponent } from "./list-locations/list-locations.component";
 import { CreateTimehseetComponent } from "./create-timehseet/create-timehseet.component";
+import { ListTimesheetComponent } from "./list-timesheet/list-timesheet.component";
 
 const routes: Routes = [
   { path: "login", component: LoginComponent },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: "createLocation", component: CreateLocationComponent },
   { path: "listLocations", component: ListLocationsComponent },
   { path: "createTimesheet", component: CreateTimehseetComponent },
+  { path: "listTimesheets", component: ListTimesheetComponent },
 ];
 
 @NgModule({

@@ -1,5 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { TimesheetService } from "../timesheet.service";
+import { timesheet } from "../timesheet";
+import { DATE } from "ngx-bootstrap/chronos/units/constants";
+import { time } from "log-timestamp";
 
 @Component({
   selector: "app-create-timehseet",
@@ -7,7 +10,13 @@ import { TimesheetService } from "../timesheet.service";
   styleUrls: ["./create-timehseet.component.css"],
 })
 export class CreateTimehseetComponent implements OnInit {
-  timesheet: any;
+  timesheet: timesheet = new timesheet("", "", "", "", "", "");
+  // new Date(),
+  // "",
+  // new time(),
+  // new time(),
+  // "",
+  // ""
   message: any;
   constructor(private service: TimesheetService) {}
 
