@@ -13,8 +13,9 @@ export class CreateDoctorComponent implements OnInit {
   doctor: doctor = new doctor("", "", "");
   message: any;
 
-  constructor(private service: DoctorServiceService) // route: ActivatedRoute,
-  // router: AppRoutingModule
+  constructor(
+    private service: DoctorServiceService // route: ActivatedRoute,
+  ) // router: AppRoutingModule
   {}
 
   ngOnInit(): void {}
@@ -25,6 +26,6 @@ export class CreateDoctorComponent implements OnInit {
 
   public addDoctor() {
     let resp = this.service.addDoctor(this.doctor);
-    resp.subscribe((data) => (this.message = data));
+    resp.subscribe((data) => (this.message = "Doctor Created Successfully"));
   }
 }

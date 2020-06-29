@@ -25,6 +25,7 @@ import { TimecardComponent } from "./timecard/timecard.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
+import { CreateLocationComponent } from './create-location/create-location.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
     TimecardComponent,
     CreateDoctorComponent,
     ListDoctorsComponent,
+    CreateLocationComponent,
   ],
   imports: [
     BrowserModule,
