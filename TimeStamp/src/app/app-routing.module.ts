@@ -1,25 +1,25 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
-import { RegisterComponent } from './register/register.component';
+import { NgModule } from "@angular/core";
+import { Routes, RouterModule } from "@angular/router";
+import { LoginComponent } from "./login/login.component";
+import { HomeComponent } from "./home/home.component";
+import { RegisterComponent } from "./register/register.component";
+import { TimecardComponent } from "./timecard/timecard.component";
+import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
+import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
 
-
-const routes: Routes = 
-[
-	{ path: 'login', component: LoginComponent },
-	{ path: 'registration', component: RegisterComponent },
-	{ path: 'home', component: HomeComponent },
-	{ path: '', component: HomeComponent }
+const routes: Routes = [
+  { path: "login", component: LoginComponent },
+  { path: "registration", component: RegisterComponent },
+  { path: "home", component: HomeComponent },
+  { path: "", component: HomeComponent },
+  { path: "listDoctors", component: ListDoctorsComponent },
+  { path: "timecard", component: TimecardComponent },
+  { path: "createDoc", component: CreateDoctorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-export const routingComponents = 
-[
-	LoginComponent,
-	HomeComponent
-]
+export class AppRoutingModule {}
+export const routingComponents = [LoginComponent, HomeComponent];
