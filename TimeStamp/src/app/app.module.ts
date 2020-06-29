@@ -24,8 +24,11 @@ import { adapterFactory } from "angular-calendar/date-adapters/date-fns";
 import { TimecardComponent } from "./timecard/timecard.component";
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
-import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
-import { CreateLocationComponent } from './create-location/create-location.component';
+import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
+import { CreateLocationComponent } from "./create-location/create-location.component";
+import { ListLocationsComponent } from "./list-locations/list-locations.component";
+import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,8 @@ import { CreateLocationComponent } from './create-location/create-location.compo
     CreateDoctorComponent,
     ListDoctorsComponent,
     CreateLocationComponent,
+    ListLocationsComponent,
+    CreateTimehseetComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +57,7 @@ import { CreateLocationComponent } from './create-location/create-location.compo
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
+    BsDatepickerModule.forRoot(),
     MatListModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({
