@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 	ngOnInit(): void 
 	{
 		this.formdata = new FormGroup({
-			username: new FormControl("", Validators.required),
+			email: new FormControl("", Validators.required),
 			password: new FormControl("", Validators.required)
 		});	
 		this.loginService.getValidUsers().subscribe(
@@ -35,12 +35,14 @@ export class LoginComponent implements OnInit {
 	{
 		for(var x = 0; x < this.valid_users.length; x++)
 		{
-			if(this.valid_users[x].username == user.username)
+			if(this.valid_users[x].email == user.email)
 			{
 				if(this.valid_users[x].password == user.password)
 				{
 					this.router.navigate(['/']);
 					this.loginService.loggedIn = true;
+					this.loginService.loggedInUser = user.firstName + user.lastName;
+					console.log(this.loginService.loggedInUser);
 					return;
 				}
 				else

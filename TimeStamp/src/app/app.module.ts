@@ -13,6 +13,14 @@ import { FlatpickrModule } from "angularx-flatpickr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 import { TimeNavComponent } from "./time-nav/time-nav.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { HttpClientModule } from "@angular/common/http";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+/*
+import { FlatpickrModule } from "angularx-flatpickr";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
@@ -29,6 +37,25 @@ import { CreateLocationComponent } from "./create-location/create-location.compo
 import { ListLocationsComponent } from "./list-locations/list-locations.component";
 import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.component';
+import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
+*/
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
+import { LoginComponent } from "./login/login.component";
+import { HomeComponent } from "./home/home.component";
+import { LoginService } from "./login.service";
+import { RegisterComponent } from "./register/register.component";
+import { DisplayUsersComponent } from "./display-users/display-users.component";
+import { DisplayUserComponent } from "./display-user/display-user.component";
+import { LayoutModule } from "@angular/cdk/layout";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatIconModule } from "@angular/material/icon";
+import { MatListModule } from "@angular/material/list";
+import { CalendarModule, DateAdapter } from "angular-calendar";
+//import { TimeNavComponent } from './time-nav/time-nav.component';;
+//import { TimecardComponent } from "./timecard/timecard.component";
 
 @NgModule({
   declarations: [
@@ -37,12 +64,16 @@ import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.co
     HomeComponent,
     RegisterComponent,
     TimeNavComponent,
-    TimecardComponent,
-    CreateDoctorComponent,
-    ListDoctorsComponent,
-    CreateLocationComponent,
-    ListLocationsComponent,
-    CreateTimehseetComponent,
+    // TimecardComponent,
+    // CreateDoctorComponent,
+    // ListDoctorsComponent,
+    // CreateLocationComponent,
+    // ListLocationsComponent,
+    // CreateTimehseetComponent,
+    DisplayUsersComponent,
+    DisplayUserComponent,
+    //    TimeNavComponent
+    //    TimecardComponent
   ],
   imports: [
     BrowserModule,
@@ -51,20 +82,27 @@ import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.co
     NgbModalModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    BsDatepickerModule.forRoot(),
+    MatListModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
     MatListModule,
     FlatpickrModule.forRoot(),
-    CalendarModule.forRoot({
-      provide: DateAdapter,
-      useFactory: adapterFactory,
-    }),
-    NgbModule,
+    // CalendarModule.forRoot({
+    //   // provide: DateAdapter,
+    //   // useFactory: adapterFactory,
+    // }),
+    NgModule,
+    NgModule,
   ],
   providers: [LoginService],
   bootstrap: [AppComponent],

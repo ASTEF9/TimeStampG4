@@ -1,0 +1,25 @@
+<div *ngIf="loginService.loggedIn; else elseBlock">
+	<h2>Users</h2>
+	<button>Add User</button>
+
+	<table mdbTable>
+	  <thead>
+		<tr>
+		  <th>Name</th>
+		  <th>Description</th>
+		  <th>Delete</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr mdbTableCol *ngFor="let u of users">
+		  <th (click)="displayUser(u)">{{u.firstName}} {{u.lastName}}</th>
+		  <td>{{u.description}}</td>
+		  <td><button (click)="deleteUser(u)">Delete</button></td>
+		</tr>
+	  </tbody>
+	</table>
+</div>
+
+<ng-template #elseBlock>
+    <h1>You must be logged in to view this page</h1>
+</ng-template>
