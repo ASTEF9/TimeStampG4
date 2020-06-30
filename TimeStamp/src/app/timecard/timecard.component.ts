@@ -19,6 +19,8 @@ import {
   CalendarView,
 } from "angular-calendar";
 
+import { LoginService } from '../login.service';
+
 const colors: any = {
   red: {
     primary: "#ad2121",
@@ -117,7 +119,7 @@ export class TimecardComponent implements OnInit {
 
   activeDayIsOpen: boolean = true;
 
-  constructor(private modal: NgbModal) {}
+  constructor(private modal: NgbModal, public loginService: LoginService) {}
 
   dayClicked({ date, events }: { date: Date; events: CalendarEvent[] }): void {
     if (isSameMonth(date, this.viewDate)) {

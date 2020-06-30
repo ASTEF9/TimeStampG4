@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { DoctorServiceService } from "../doctor-service.service";
 import { doctor } from "../doctor";
-import { ActivatedRoute } from "@angular/router";
+import { Router, ActivatedRoute } from "@angular/router";
 import { AppRoutingModule } from "../app-routing.module";
 
 @Component({
@@ -14,7 +14,8 @@ export class CreateDoctorComponent implements OnInit {
   message: any;
 
   constructor(
-    private service: DoctorServiceService // route: ActivatedRoute,
+    private service: DoctorServiceService, private router: Router 
+	// route: ActivatedRoute,
   ) // router: AppRoutingModule
   {}
 
@@ -26,6 +27,10 @@ export class CreateDoctorComponent implements OnInit {
 
   public addDoctor() {
     let resp = this.service.addDoctor(this.doctor);
-    resp.subscribe((data) => (this.message = "Doctor Created Successfully"));
+    resp.subscribe((data) => 
+	{
+		//this.message = "Location Created Successfully";
+		this.router.navigate(['/master/listDoctors']);
+	});
   }
 }

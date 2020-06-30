@@ -1,5 +1,5 @@
 <div *ngIf="loginService.loggedIn; else elseBlock">
-  <app-time-nav></app-time-nav>
+ <h1>Welcome {{loginService.loggedInUser}} </h1>
 </div>
 
 <ng-template #elseBlock>

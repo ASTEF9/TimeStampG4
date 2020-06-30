@@ -1,0 +1,63 @@
+<div *ngIf="loginService.loggedIn; else elseBlock">
+	<div class="col-md-6 user-container">
+		<h2 style="margin: auto">List Timesheets</h2>
+
+		<!-- <h3>Child Component to Display Tour Names</h3>
+		<app-child-tour [tour_name]="Name"></app-child-tour> -->
+
+		<router-outlet></router-outlet>
+		
+		<button routerLink="/createTimesheet" routerLinkActive="active">Add Event</button>
+
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<!-- <th class="hidden" title=" tourBullets"> tourBullets</th> -->
+					<th title="Doctor ID">Date</th>
+					<th title="Doctor FirstName">Sector</th>
+					<th title="Action"> TimeIn</th>
+					<th title="Action"> TimeOut</th>
+					<th title="Action"> hrsWorked</th>
+					<th title="Action"> hrsCode</th>
+
+					<!-- <th title="TourPrice">Select Employee</th> -->
+
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let timesheet of timesheets; let i = index">
+
+					<!-- tourBullets: string;
+				tourRegion: string;
+				tourDifficulty: string;
+				tourLength: number;
+				tourPrice: number;
+				tourTags: string[];
+				tourName: string; -->
+					<!-- <th class="hidden"></th> -->
+					<td>{{i}}</td>
+					<th title="date">{{timesheet?.date}}</th>
+
+					<td (click)="onSelect(timesheet.id)" title="sector">{{timesheet?.sector}}</td>
+
+					<th title="date">{{timesheet?.timeIn}}</th>
+					<th title="date">{{timesheet?.timeOut}}</th>
+					<th title="date">{{timesheet?.hrsWorked}}</th>
+					<th title="date">{{timesheet?.hrsCode}}</th>
+
+					<td class="text-center"><button class="btn btn-danger btn-xs"
+							(click)="deleteLocation(timesheet.id)"><span class="glyphicon glyphicon-remove"></span>
+							Delete</button>
+
+
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+
+<ng-template #elseBlock>
+  <h1>Please Log In</h1>
+</ng-template>

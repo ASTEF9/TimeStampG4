@@ -1,9 +1,60 @@
+<div *ngIf="loginService.loggedIn; else elseBlock">
+<nav>
+	<button routerLink="/home" routerLinkActive="active">Home</button>
+	<button (click)="logout()">Logout</button>
+</nav>
+</div>
+
+<ng-template #elseBlock>
 <nav>
 	<button routerLink="/home" routerLinkActive="active">Home</button>
 	<button routerLink="/login" routerLinkActive="active">Login</button>
 	<button routerLink="/registration" routerLinkActive="active">Register</button>
-	<button routerLink="/timecard" routerLinkActive="active">TimeCard</button>
-	<button (click)="logout()">Logout</button>
 </nav>
+</ng-template>
 
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false"
+  >
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+<!--  
+	WE CANNOT USE LINKS BECAUSE THIS RESETS THE SESSION AND LOGS YOU OUT (FOR NOW)
+		<a mat-list-item href="http://localhost:4200/users">Users</a>
+      <a mat-list-item href="#">Link 2</a>
+      <a mat-list-item href="http://localhost:4200/timecard">Time Card</a>	  
+	-->
+	  <button routerLink="/users" routerLinkActive="active">Users</button> <br>
+	  <button routerLink="/master" routerLinkActive="active">Master Data</button> <br>
+	  <button routerLink="/timecard" routerLinkActive="active">Time Card</button>
+	  <button routerLink="/listTimesheets" routerLinkActive="active">Time Sheets</button>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async"
+      >
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>TimeStamp</span>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+<!--
+<app-time-nav></app-time-nav>
+-->
 <router-outlet></router-outlet>

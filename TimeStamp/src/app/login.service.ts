@@ -18,7 +18,8 @@ export class LoginService {
 
 	constructor(private http: HttpClient) 
 	{ 
-		this.loggedIn = false;
+//		this.loggedIn = false;
+		this.loggedIn = true;
 		this.loggedInUser = "";
 		this.getValidUsers().subscribe(
 			(data) => this.id = data[data.length - 1].id,

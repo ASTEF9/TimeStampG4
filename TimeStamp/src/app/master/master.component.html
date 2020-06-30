@@ -1,0 +1,14 @@
+<h2>Master Data</h2>
+
+<div *ngIf="loginService.loggedIn; else elseBlock">
+	<nav>
+		<button routerLink="/master/listLocations" routerLinkActive="active">Locations</button>
+		<button routerLink="/master/listDoctors" routerLinkActive="active">Doctors</button>
+	</nav>
+
+	<router-outlet></router-outlet>
+</div>
+
+<ng-template #elseBlock>
+    <h1>You must be logged in to view this page</h1>
+</ng-template>

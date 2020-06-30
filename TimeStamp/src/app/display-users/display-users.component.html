@@ -1,8 +1,8 @@
 <div *ngIf="loginService.loggedIn; else elseBlock">
 	<h2>Users</h2>
-	<button>Add User</button>
+	<button routerLink="/registration" routerLinkActive="active">Add User</button>
 
-	<table mdbTable>
+	<table class="table table-striped">
 	  <thead>
 		<tr>
 		  <th>Name</th>
@@ -14,7 +14,12 @@
 		<tr mdbTableCol *ngFor="let u of users">
 		  <th (click)="displayUser(u)">{{u.firstName}} {{u.lastName}}</th>
 		  <td>{{u.description}}</td>
-		  <td><button (click)="deleteUser(u)">Delete</button></td>
+		  <td class="text-center">
+			<button class="btn btn-danger btn-xs" 
+					(click)="deleteUser(u)">
+						<span class="glyphicon glyphicon-remove"></span>Delete
+			</button>
+		  </td>
 		</tr>
 	  </tbody>
 	</table>

@@ -11,6 +11,9 @@ import { ListDoctorsComponent } from "./list-doctors/list-doctors.component";
 import { CreateLocationComponent } from "./create-location/create-location.component";
 import { ListLocationsComponent } from "./list-locations/list-locations.component";
 import { CreateTimehseetComponent } from "./create-timehseet/create-timehseet.component";
+import { ListTimesheetComponent } from "./list-timesheet/list-timesheet.component";
+import { MasterComponent } from
+"./master/master.component";
 
 
 const routes: Routes = 
@@ -21,11 +24,23 @@ const routes: Routes =
 	{ path: 'users', component: DisplayUsersComponent },
 	{ path: 'user/:id', component: DisplayUserComponent },
 	{ path: "timecard", component: TimecardComponent },
+	/*
+	{ path: "master", component: MasterComponent },
 	{ path: "createDoc", component: CreateDoctorComponent },
 	{ path: "createLocation", component: CreateLocationComponent },
 	{ path: "listDoctors", component: ListDoctorsComponent },
 	{ path: "listLocations", component: ListLocationsComponent },
+	*/
+	{ path: "master", component: MasterComponent, children:
+		[
+			{ path: "createDoc", component: CreateDoctorComponent },
+			{ path: "createLocation", component: CreateLocationComponent },
+			{ path: "listDoctors", component: ListDoctorsComponent },
+			{ path: "listLocations", component: ListLocationsComponent }		
+		]
+	},
 	{ path: "createTimesheet", component: CreateTimehseetComponent },
+	{ path: "listTimesheets", component: ListTimesheetComponent },
 	{ path: '', component: HomeComponent }
 ];
 

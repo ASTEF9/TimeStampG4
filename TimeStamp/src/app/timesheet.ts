@@ -1,21 +1,19 @@
 import { Time } from "@angular/common";
 import { doctor } from "./doctor";
 
-export class location {
-  date: Date;
+export class timesheet {
+  date: string;
   sector: string;
-  doctor: doctor;
-  timeIn: Time;
-  timeOut: Time;
-  hrsCode: String;
-  hrsWorked: String;
+  timeIn: string;
+  timeOut: string;
+  hrsCode: string;
+  hrsWorked: string;
   constructor(
-    date: Date,
+    date: string,
     sector: string,
-    doctor: doctor,
-    timeIn: Time,
-    timeOut: Time,
-    hrsCode: String,
-    hrsWorked: String
+    timeIn: string,
+    timeOut: string,
+    hrsCode: string,
+    hrsWorked: string
   ) {}
 }

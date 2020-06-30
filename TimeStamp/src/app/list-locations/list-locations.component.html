@@ -1,10 +1,12 @@
 <div class="col-md-6 user-container">
-    <h2 style="margin: auto">List Doctors</h2>
+    <h2 style="margin: auto">List Locations</h2>
 
     <!-- <h3>Child Component to Display Tour Names</h3>
     <app-child-tour [tour_name]="Name"></app-child-tour> -->
 
     <router-outlet></router-outlet>
+	
+	<button routerLink="/master/createLocation" routerLinkActive="active">Add Location</button>
 
     <table class="table table-striped">
         <thead>
@@ -13,7 +15,6 @@
                 <th title="Doctor ID">Sector</th>
                 <th title="Doctor FirstName">Location</th>
                 <th title="Action"> Action</th>
-
                 <!-- <th title="TourPrice">Select Employee</th> -->
 
 
@@ -32,15 +33,12 @@
                 <!-- <th class="hidden"></th> -->
                 <td>{{i}}</td>
                 <th title="Tour Name">{{location?.sector}}</th>
-
+<!--
                 <td (click)="onSelect(location.id)" title="Tour Price">{{location?.sector}}</td>
-
+-->
                 <td class="text-center"><button class="btn btn-danger btn-xs"
                         (click)="deleteLocation(location.id)"><span class="glyphicon glyphicon-remove"></span>
                         Delete</button>
-
-
-
             </tr>
         </tbody>
     </table>

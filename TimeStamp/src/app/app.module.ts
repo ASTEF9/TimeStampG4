@@ -14,7 +14,7 @@ import { DisplayUserComponent } from './display-user/display-user.component';
 import { FlatpickrModule } from "angularx-flatpickr";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbModalModule } from "@ng-bootstrap/ng-bootstrap";
-import { TimeNavComponent } from "./time-nav/time-nav.component";
+//import { TimeNavComponent } from "./time-nav/time-nav.component";
 import { LayoutModule } from "@angular/cdk/layout";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule } from "@angular/material/button";
@@ -29,8 +29,10 @@ import { CreateDoctorComponent } from "./create-doctor/create-doctor.component";
 import { ListDoctorsComponent } from './list-doctors/list-doctors.component';
 import { CreateLocationComponent } from './create-location/create-location.component';
 import { ListLocationsComponent } from "./list-locations/list-locations.component";
-import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
+//import { BsDatepickerModule } from "ngx-bootstrap/datepicker";
 import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.component';
+import { ListTimesheetComponent } from "./list-timesheet/list-timesheet.component";
+import { MasterComponent } from './master/master.component';
 
 @NgModule({
   declarations: [
@@ -40,13 +42,15 @@ import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.co
     RegisterComponent,
     DisplayUsersComponent,
     DisplayUserComponent,
-    TimeNavComponent,
+//    TimeNavComponent,
     TimecardComponent,
     CreateDoctorComponent,
     ListDoctorsComponent,
     CreateLocationComponent,
     ListLocationsComponent,
 	CreateTimehseetComponent,
+	ListTimesheetComponent,
+	MasterComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,7 +65,7 @@ import { CreateTimehseetComponent } from './create-timehseet/create-timehseet.co
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-	BsDatepickerModule.forRoot(),
+//	BsDatepickerModule.forRoot(),
     MatListModule,
     FlatpickrModule.forRoot(),
     CalendarModule.forRoot({

@@ -1,8 +1,11 @@
+<!--
+WE WANT REGISTERED UESRES TO ADD MORE USERS
 <div *ngIf="loginService.loggedIn; else elseBlock">
 	<h1> Log Out First </h1>
 </div>
 
 <ng-template #elseBlock>
+-->
     <h1>Register</h1>
     <form [formGroup]="formdata" #registrationForm="ngForm" (ngSubmit)="register(registrationForm.value)">
       <div class="form-group">
@@ -40,4 +43,7 @@
       <button type="submit" [disabled]="!formdata.valid" class="btn btn-success">Register</button>
 
     </form>
+	
+<!--
 </ng-template>
+-->
