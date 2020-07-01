@@ -1,16 +1,21 @@
+<div class = "fill">
+	<img src="../../assets/images/Timesheet.png" alt=""width="250" height="100">  
+	<img class="banner" src="../../assets/images/banner.jpg" alt="" width="1200" height="100">  
+</div>
+
 <div *ngIf="loginService.loggedIn; else elseBlock">
-<nav>
-	<button routerLink="/home" routerLinkActive="active">Home</button>
-	<button (click)="logout()">Logout</button>
-</nav>
+	<nav>
+		<button routerLink="/home" routerLinkActive="active">Home</button>
+		<button (click)="logout()">Logout</button>
+	</nav>
 </div>
 
 <ng-template #elseBlock>
-<nav>
-	<button routerLink="/home" routerLinkActive="active">Home</button>
-	<button routerLink="/login" routerLinkActive="active">Login</button>
-	<button routerLink="/registration" routerLinkActive="active">Register</button>
-</nav>
+	<nav>
+		<button routerLink="/home" routerLinkActive="active">Home</button>
+		<button routerLink="/login" routerLinkActive="active">Login</button>
+		<button routerLink="/registration" routerLinkActive="active">Register</button>
+	</nav>
 </ng-template>
 
 <mat-sidenav-container class="sidenav-container">
