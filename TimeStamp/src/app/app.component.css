@@ -1,1 +1,10 @@
-/**/
+.fill{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: aquamarine;
+}
+.fill .banner {
+   object-fit: cover;
+}

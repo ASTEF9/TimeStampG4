@@ -16,31 +16,40 @@
                     </legend>
 
                     <div class="form-group">
-                        <label for="sector"><span class="req">* </span> Sector: </label>
-                        <input required type="text" [(ngModel)]="location.sector" name="sector" id="sector"
+                        <label for="date"><span class="req">* </span> Sector: </label>
+                        <input required type="date" bsdatepicker [(ngModel)]="timesheet.date" name="sector" id="sector"
                             class="form-control phone" maxlength="28" placeholder="Enter sector" />
                     </div>
 
                     <div class="form-group">
                         <label for="location"><span class="req">* </span> Location: </label>
-                        <input class="form-control" type="text" [(ngModel)]="location.location" name="location"
+                        <input class="form-control" type="text" [(ngModel)]="timesheet.sector" name="location"
                             id="location" required placeholder="Enter valid Location" />
                         <div id="errFirst"></div>
                     </div>
 
-                    <!-- <div class="form-group">
-                        <label for="fileNumber"><span class="req">* </span> File Name: </label>
-                        <input class="form-control" type="text" [(ngModel)]="doctor.fileNumber" name="fileNumber"
-                            id="fileName" required placeholder="Enter valid File Name" />
+                    <div class="form-group">
+                        <label for="location"><span class="req">* </span> Time In: </label>
+                        <input class="form-control" type="time" [(ngModel)]="timesheet.timeIn" name="location"
+                            id="location" required placeholder="Enter valid Location" />
                         <div id="errFirst"></div>
-                    </div> -->
+                    </div>
+
+                    <div class="form-group">
+                        <label for="location"><span class="req">* </span> Time Out: </label>
+                        <input class="form-control" type="time" [(ngModel)]="timesheet.timeOut" name="location"
+                            id="location" required placeholder="Enter valid Location" />
+                        <div id="errFirst"></div>
+                    </div>
+
+
 
 
 
 
                     <div class="form-group">
                         <input class="btn btn-success" type="submit" name="submit_reg" value="Register"
-                            (click)="addLocation()">
+                            (click)="addTimesheet()">
                     </div>
                 </fieldset>
             </form><!-- ends register form -->

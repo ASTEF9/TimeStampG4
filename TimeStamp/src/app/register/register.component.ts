@@ -19,14 +19,24 @@ export class RegisterComponent implements OnInit {
 	ngOnInit(): void 
 	{
 		this.formdata = new FormGroup({
-			username: new FormControl("", Validators.required),
-			password: new FormControl("", Validators.required)
+			firstName: new FormControl("", Validators.required),
+			lastName: new FormControl("", Validators.required),
+			description: new FormControl("", Validators.required),
+			email: new FormControl("", Validators.required),
+			password: new FormControl("", Validators.required),
+			rePassword: new FormControl("", Validators.required)
 		});		
 	}
 	
 	register(user): void
 	{
-		var u = new User(user.username, user.password);
+		if(user.password != user.rePassword)
+		{
+			console.log("ERROR PASSWORD NO GOOD");
+			this.router.navigate(['/registration']);;
+			return;
+		}
+		var u = new User(user.email, user.password, user.firstName, user.lastName, user.description);
 		this.loginService.register(u).subscribe((data: {}) =>
 		{
 			this.router.navigate(['/']);

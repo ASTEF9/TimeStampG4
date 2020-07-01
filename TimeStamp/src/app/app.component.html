@@ -1,9 +1,23 @@
+<div class = "fill">
+	<img src="../../assets/images/Timesheet.png" alt=""width="250" height="200">  
+	<img class="banner" src="../../assets/images/banner.jpg" alt="" width="1200" height="200">  
+  </div>
+<div *ngIf="loginService.loggedIn; else elseBlock">
+<nav>
+	<button routerLink="/home" routerLinkActive="active">Home</button>
+	<button (click)="logout()">Logout</button>
+</nav>
+</div>
+
+<ng-template #elseBlock>
 <nav>
 	<button routerLink="/home" routerLinkActive="active">Home</button>
 	<button routerLink="/login" routerLinkActive="active">Login</button>
 	<button routerLink="/registration" routerLinkActive="active">Register</button>
-	<button routerLink="/timecard" routerLinkActive="active">TimeCard</button>
-	<button (click)="logout()">Logout</button>
 </nav>
+</ng-template>
 
+<!--
+<app-time-nav></app-time-nav>
+-->
 <router-outlet></router-outlet>

@@ -9,9 +9,15 @@
   >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="#">Link 1</a>
+<!--  
+	WE CANNOT USE LINKS BECAUSE THIS RESETS THE SESSION AND LOGS YOU OUT (FOR NOW)
+		<a mat-list-item href="http://localhost:4200/users">Users</a>
       <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="http://localhost:4200/timecard">Time Card</a>
+      <a mat-list-item href="http://localhost:4200/timecard">Time Card</a>	  
+	-->
+	  <button routerLink="/users" routerLinkActive="active">Users</button> <br>
+	  <button>Link 2</button> <br>
+	  <button routerLink="/timecard" routerLinkActive="active">Time Card</button>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
