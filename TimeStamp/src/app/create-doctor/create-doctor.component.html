@@ -9,40 +9,53 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <form>
-                <fieldset>
-                    <legend class="text-center">Valid Information to add a Doctor is Required <span class="req"></span>
-                    </legend>
+			<h1>Register a Doctor</h1>
+			<form [formGroup]="formdata" #registrationForm="ngForm" (ngSubmit)="addDoctor(registrationForm.value)">
+				<div class="form-group">
+					<label for="firstName">
+						<span class="req">* </span> 
+						First Name: 
+					</label>
+                    <input required type="text" name="firstName" formControlName="firstName" class="form-control phone" maxlength="28"/>
+							
+					<div *ngIf="formdata.controls['firstName'].invalid && formdata.controls['firstName'].touched" class="alert alert-danger">
+						<div *ngIf="formdata.controls['firstName'].errors.required">
+						First Name is required.
+						</div>
+					</div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="firstName"><span class="req">* </span> First Name: </label>
-                        <input required type="text" [(ngModel)]="doctor.firstName" name="firstName" id="firstName"
-                            class="form-control phone" maxlength="28" placeholder="Enter valid First Name" />
-                    </div>
+                <div class="form-group">
+                    <label for="lastName">
+						<span class="req">* </span> 
+						Last Name: 
+					</label>
+                    <input required type="text" name="latName" formControlName="lastName" class="form-control phone" maxlength="28"/>
+						
+					<div *ngIf="formdata.controls['lastName'].invalid && formdata.controls['lastName'].touched" class="alert alert-danger">
+						<div *ngIf="formdata.controls['lastName'].errors.required">
+						Last Name is required.
+						</div>
+					</div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="lastName"><span class="req">* </span> Last Name: </label>
-                        <input class="form-control" type="text" [(ngModel)]="doctor.lastName" name="LastName"
-                            id="lastName" required placeholder="Enter valid Last Name" />
-                        <div id="errFirst"></div>
-                    </div>
+                <div class="form-group">
+                    <label for="fileNumber">
+						<span class="req">* </span> 
+						File Name: 
+					</label>
+                    <input required type="text" name="fileName" formControlName="fileName" class="form-control phone" maxlength="28"/>
+						
+					<div *ngIf="formdata.controls['fileName'].invalid && formdata.controls['fileName'].touched" class="alert alert-danger">
+						<div *ngIf="formdata.controls['fileName'].errors.required">
+						File Name is required.
+						</div>
+					</div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="fileNumber"><span class="req">* </span> File Name: </label>
-                        <input class="form-control" type="text" [(ngModel)]="doctor.fileNumber" name="fileNumber"
-                            id="fileName" required placeholder="Enter valid File Name" />
-                        <div id="errFirst"></div>
-                    </div>
+				<button type="submit" [disabled]="!formdata.valid" class="btn btn-success">Register</button>
 
-
-
-
-                    <div class="form-group">
-                        <input class="btn btn-success" type="submit" name="submit_reg" value="Register"
-                            (click)="addDoctor()">
-                    </div>
-                </fieldset>
-            </form><!-- ends register form -->
+			</form><!-- ends register form -->
             <!-- second for to fiter user-->
         </div><!-- ends col-6 -->
 

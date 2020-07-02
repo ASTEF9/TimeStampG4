@@ -1,102 +1,98 @@
-<div *ngIf="loginService.loggedIn; else elseBlock">
-	<link
-	  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
-	  rel="stylesheet"
-	  id="bootstrap-css"
-	/>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-	<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<!------ Include the above in your HEAD tag ---------->
-	<div style="text-align: center;">
-	  <h1>{{ message }}</h1>
-	</div>
-
-	<div class="container">
-	  <div class="row">
-		<div class="col-md-6">
-		  <form>
-			<fieldset>
-			  <legend class="text-center">
-				Valid Information to add a Location is Required
-				<span class="req"></span>
-			  </legend>
-
-			  <div class="form-group">
-				<label for="date"><span class="req">* </span> Sector: </label>
-				<input
-				  required
-				  type="date"
-				  bsdatepicker
-				  [(ngModel)]="timesheet.date"
-				  name="sector"
-				  id="sector"
-				  class="form-control phone"
-				  maxlength="28"
-				  placeholder="Enter sector"
-				/>
-			  </div>
-
-			  <div class="form-group">
-				<label for="location"><span class="req">* </span> Sector: </label>
-				<input
-				  class="form-control"
-				  type="text"
-				  [(ngModel)]="timesheet.sector"
-				  name="location"
-				  id="location"
-				  required
-				  placeholder="Enter valid Location"
-				/>
-				<div id="errFirst"></div>
-			  </div>
-
-			  <div class="form-group">
-				<label for="location"><span class="req">* </span> Time In: </label>
-				<input
-				  class="form-control"
-				  type="time"
-				  [(ngModel)]="timesheet.timeIn"
-				  name="location"
-				  id="location"
-				  required
-				  placeholder="Enter valid Location"
-				/>
-				<div id="errFirst"></div>
-			  </div>
-
-			  <div class="form-group">
-				<label for="location"><span class="req">* </span> Time Out: </label>
-				<input
-				  class="form-control"
-				  type="time"
-				  [(ngModel)]="timesheet.timeOut"
-				  name="location"
-				  id="location"
-				  required
-				  placeholder="Enter valid Location"
-				/>
-				<div id="errFirst"></div>
-			  </div>
-
-			  <div class="form-group">
-				<input
-				  class="btn btn-success"
-				  type="submit"
-				  name="submit_reg"
-				  value="Submit"
-				  (click)="addTimesheet()"
-				/>
-			  </div>
-			</fieldset>
-		  </form>
-		  <!-- ends register form -->
-		  <!-- second for to fiter user-->
-		</div>
-		<!-- ends col-6 -->
-	  </div>
-	</div>
+<link
+  href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css"
+  rel="stylesheet"
+  id="bootstrap-css"
+/>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+<div *ngIf="error">
+	<h1 style="color:red;"> 
+		<b> {{errorMsg}} </b>
+	</h1>
 </div>
 
-<ng-template #elseBlock>
-  <h1>Please Log In</h1>
-</ng-template>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <form>
+        <fieldset>
+          <legend class="text-center">
+            Valid Information to add a Location is Required
+            <span class="req"></span>
+          </legend>
+
+          <div class="form-group">
+            <label for="date"><span class="req">* </span> Sector: </label>
+            <input
+              required
+              type="date"
+              bsdatepicker
+              [(ngModel)]="timesheet.date"
+              name="sector"
+              id="sector"
+              class="form-control phone"
+              maxlength="28"
+              placeholder="Enter sector"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="location"><span class="req">* </span> Sector: </label>
+            <input
+              class="form-control"
+              type="text"
+              [(ngModel)]="timesheet.sector"
+              name="location"
+              id="location"
+              required
+              placeholder="Enter valid Location"
+            />
+            <div id="errFirst"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="location"><span class="req">* </span> Time In: </label>
+            <input
+              class="form-control"
+              type="time"
+              [(ngModel)]="timesheet.timeIn"
+              name="location"
+              id="location"
+              required
+              placeholder="Enter valid Location"
+            />
+            <div id="errFirst"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="location"><span class="req">* </span> Time Out: </label>
+            <input
+              class="form-control"
+              type="time"
+              [(ngModel)]="timesheet.timeOut"
+              name="location"
+              id="location"
+              required
+              placeholder="Enter valid Location"
+            />
+            <div id="errFirst"></div>
+          </div>
+
+          <div class="form-group">
+            <input
+              class="btn btn-success"
+              type="submit"
+              name="submit_reg"
+              value="Submit"
+              (click)="addTimesheet()"
+            />
+          </div>
+        </fieldset>
+      </form>
+      <!-- ends register form -->
+      <!-- second for to fiter user-->
+    </div>
+    <!-- ends col-6 -->
+  </div>
+</div>
